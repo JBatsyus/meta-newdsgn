@@ -1,0 +1,251 @@
+@use "../helpers"as *;
+/*---------- DOCTORS (START)---------------------*/
+
+.doctors {
+    .swiper {
+        @include tablet {
+            overflow: visible;
+            padding-bottom: 40px;
+        }
+    }
+
+    &__head {
+        margin-bottom: 40px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            margin-bottom: 32px;
+        }
+
+        @include mobile {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__swiper {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        .swiper-wrapper {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .swiper-slide {
+            height: auto;
+            display: flex;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: var(--gray_blue);
+        border-radius: 32px;
+        overflow: hidden;
+        padding: 24px;
+
+        @include tablet {
+            padding: 16px 16px 24px;
+        }
+    }
+
+    &__image-block {
+        position: relative;
+        display: grid;
+        justify-content: center;
+        width: 100%;
+        border-radius: 32px;
+        height: 280px;
+        overflow: hidden;
+        background-color: var(--white);
+        margin-bottom: 20px;
+
+        @include tablet {
+            height: 240px;
+            border-radius: 24px;
+            margin-bottom: 16px;
+        }
+
+        .doctors__image {
+            width: auto;
+            max-width: 208px;
+            height: 100%;
+            object-fit: cover;
+            object-position: center bottom;
+            display: block;
+        }
+
+        .doctors__rating {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border: var(--border-gray_light);
+            border-radius: 12px;
+            padding: 6px 8px;
+            background: var(--gray_blue);
+
+            font-weight: 600;
+            font-size: 16px;
+
+            line-height: 1.1;
+            letter-spacing: 0.01em;
+            color: var(--color-secondary);
+            text-align: center;
+            z-index: 10;
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 20px;
+
+        @include tablet {
+            font-size: 20px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 16px;
+        row-gap: 12px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1;
+        color: var(--gray_blue_dark);
+        margin-bottom: 50px;
+
+        @include tablet {
+            margin-bottom: 24px;
+        }
+
+        .highlight {
+            font-weight: 700;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-top: auto;
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &__price {
+        font-weight: 500;
+        line-height: 1.1;
+        letter-spacing: 0.01em;
+        color: var(--color-secondary);
+        border-radius: 18px;
+        padding: 16px 24px;
+        white-space: nowrap;
+
+        background-color: var(--white);
+    }
+
+    // Навигация
+    &__controls {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    // Навигация
+    &__controls {
+        position: absolute;
+        top: 50%;
+
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 24px;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    &__nav {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: var(--white);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
+
+        svg {
+            display: block;
+            color: var(--gray_blue_dark);
+            transition: color 0.2s ease;
+        }
+
+        &:hover svg,
+        &:focus-visible svg {
+            color: var(--blue_hover);
+        }
+    }
+
+    // Пагинация
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+        padding: 0 20px;
+
+        .swiper-pagination-bullet {
+            border-radius: 4px;
+            width: 24px;
+            height: 4px;
+            background-color: var(--blue_gray);
+            transition: background-color 0.2s;
+        }
+
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background-color: var(--color-primary);
+        }
+          /* Скрыть буллеты, которые не являются активными или ближайшими соседями */
+        .swiper-pagination-bullet {
+            opacity: 0 !important;
+            transition: opacity 0.4s;
+        }
+
+        /* Показать активный буллет */
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+        }
+
+        /* Показать ближайшие соседние буллеты (активный-1, активный+1) */
+        .swiper-pagination-bullet-active-prev,
+        .swiper-pagination-bullet-active-next {
+            opacity: 1 !important;
+        }
+    }
+}
+
+/*---------- DOCTORS (END)---------------------*/

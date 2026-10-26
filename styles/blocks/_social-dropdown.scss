@@ -1,0 +1,82 @@
+@use "../helpers"as *;
+
+.social-dropdown {
+    position: relative;
+
+    &__toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 0;
+
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.1;
+        letter-spacing: 0.01em;
+        color: var(--blue_black);
+
+        background: none;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        user-select: none;
+    }
+
+    &__icon {
+        display: inline-block;
+        transition: transform 0.4s ease;
+    }
+
+    &__menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        padding: 16px;
+
+        background-color: var(--white);
+        border: var(--border-gray_light);
+        border-radius: 8px;
+
+        // Состояние по умолчанию (скрыто)
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    &__link {
+        display: block;
+        padding: 12px 0;
+
+        color: var(--blue_black);
+        text-decoration: none;
+        border-bottom: var(--border-gray_light);
+        transition: color 0.2s ease;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+    }
+
+
+    &.open {
+        .social-dropdown__icon {
+            transform: rotate(180deg);
+        }
+
+        .social-dropdown__menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+}

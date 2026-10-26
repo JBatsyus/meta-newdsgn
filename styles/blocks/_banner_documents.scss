@@ -1,0 +1,89 @@
+@use "../helpers"as *;
+
+/*---------БАННЕР ДОКУМЕНТЫ (START)--------*/
+
+.banner_documents {
+    &__content {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 20px;
+        border-radius: 40px;
+        background-color: var(--gray_blue);
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__text {
+        padding: 80px 0 80px 80px;
+        grid-column: span 7;
+
+        @include tablet {
+            grid-column: span 12;
+
+            padding: 32px 24px;
+        }
+
+        @include mobile {
+            padding: 24px 16px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 24px;
+
+        @include tablet {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__desc {
+        margin-bottom: 40px;
+        line-height: 1.6;
+        letter-spacing: 0.01em;
+
+        @include tablet {
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 12px;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+        }
+    }
+
+    &__image-block {
+        grid-column: span 5;
+        position: relative;
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        background-size: contain;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+}
+
+/*---------БАННЕР ДОКУМЕНТЫ (END)--------*/

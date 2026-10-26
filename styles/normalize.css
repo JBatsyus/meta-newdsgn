@@ -1,0 +1,426 @@
+@charset "UTF-8";
+
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+}
+
+/**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+body,
+:where(blockquote, figure):where([class]) {
+    margin: 0;
+}
+
+/**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+:where(h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    dl):where([class]) {
+    margin-block: 0;
+}
+
+:where(dd[class]) {
+    margin-left: 0;
+}
+
+:where(fieldset[class]) {
+    margin-left: 0;
+    padding: 0;
+    border: none;
+}
+
+/**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+:where(ul[class]) {
+    list-style: none;
+}
+
+:where(address[class]) {
+    font-style: normal;
+}
+
+/**
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
+p {
+    --paragraphMarginBottom: 16px;
+    margin-block: 0;
+}
+
+/**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+p:where(:not([class]):not(:last-child)) {
+    margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+   Упрощаем работу с изображениями и видео
+  */
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/**
+   Наследуем свойства шрифт для полей ввода
+  */
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+html {
+    /**
+   Пригодится в большинстве ситуаций
+   (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
+    height: 100%;
+    /**
+   Убираем скачок интерфейса по горизонтали
+   при появлении / исчезновении скроллбара
+  */
+    scrollbar-gutter: stable;
+}
+
+/**
+   Плавный скролл
+  */
+html,
+:has(:target) {
+    scroll-behavior: smooth;
+}
+
+body {
+    /**
+   Пригодится в большинстве ситуаций
+   (когда, например, нужно будет "прижать" футер к низу сайта)
+  */
+    min-height: 100%;
+    /**
+   Унифицированный интерлиньяж
+  */
+}
+
+/**
+   Нормализация высоты элемента ссылки при его инспектировании в DevTools
+  */
+a:where([class]) {
+    display: inline-flex;
+}
+
+/**
+   Курсор-рука при наведении на элемент
+  */
+button,
+label {
+    cursor: pointer;
+}
+
+/**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут fill со значением 'none' или начинается с 'url')
+  */
+/**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут stroke со значением 'none')
+  */
+/**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+svg * {
+    transition-property: fill, stroke;
+}
+
+/**
+   Приведение рамок таблиц в классический 'collapse' вид
+  */
+:where(table) {
+    border-collapse: collapse;
+    border-color: currentColor;
+}
+
+/**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+
+
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+@media (width <=47.99875rem) {
+    .hidden-mobile {
+        display: none !important;
+    }
+}
+
+html.no-scroll {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+}
+
+
+body,
+html {
+    overflow-x: hidden !important;
+}
+
+html {
+    scroll-behavior: initial;
+}
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100dvh;
+}
+
+body {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Rubik", system-ui, sans-serif;
+    color: #1c1917;
+    background-color: #fafaf9;
+    font-weight: 400;
+}
+
+
+
+main {
+    flex-grow: 1;
+}
+
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    color: inherit;
+}
+
+a[class] {
+    text-decoration: none;
+}
+
+.section {
+    margin-bottom: 160px;
+}
+
+@media (width <=90.06125rem) {
+    .section {
+        margin-bottom: 80px;
+    }
+}
+
+:focus-visible {
+    outline: 0.125rem dashed #0f766e;
+    outline-offset: 0.125rem;
+    transition-duration: 0s !important;
+}
+
+.highlight {
+    color: var(--blue_dark);
+}
+
+
+/*--------- КНОПКИ (START)--------*/
+.button {
+    display: inline-flex;
+    justify-content: center;
+    min-width: 7.25rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    border-radius: 1.125rem;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+}
+
+.button--primary {
+    color: var(--white);
+    background-color: var(--color-secondary);
+}
+
+@media (any-hover: hover) {
+    .button--primary:hover {
+        background-color: var(--blue_hover);
+    }
+}
+
+@media (any-hover: none) {
+    .button--primary:active {
+        background-color: var(--blue_hover);
+    }
+}
+
+.button--primary:active {
+    background: var(--blue_press);
+}
+
+.button--secondary {
+    font-weight: 600;
+    color: var(--blue_black);
+    background-color: var(--white);
+}
+
+@media (any-hover: hover) {
+    .button--secondary:hover {
+        color: var(--blue_hover);
+    }
+}
+
+@media (any-hover: none) {
+    .button--secondary:active {
+        color: var(--blue_hover);
+    }
+}
+
+.button--secondary:active {
+    color: var(--blue_press);
+}
+
+.button--inverted {
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+@media (any-hover: hover) {
+    .button--inverted:hover {
+        background-color: var(--white);
+        color: var(--blue_hover);
+        border: 1px solid transparent;
+    }
+}
+
+@media (any-hover: none) {
+    .button--inverted:active {
+        background-color: var(--white);
+        color: var(--blue_hover);
+        border: 1px solid transparent;
+    }
+}
+
+.button--inverted:active {
+    color: var(--blue_press);
+}
+
+.button--accent {
+    border: 1px solid var(--blue_dark);
+    color: var(--blue_dark);
+    background-color: transparent;
+}
+
+@media (any-hover: hover) {
+    .button--accent:hover {
+        color: var(--blue_hover);
+        border: 1px solid var(--blue_hover);
+    }
+}
+
+@media (any-hover: none) {
+    .button--accent:active {
+        color: var(--blue_hover);
+        border: 1px solid var(--blue_hover);
+    }
+}
+
+.button--accent:active {
+    border: 1px solid var(--blue_press);
+    color: var(--blue_press);
+}
+
+.btn-text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    text-decoration: underline !important;
+    text-align: center;
+    color: var(--blue_black);
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.btn-text:hover {
+    color: var(--blue_hover);
+}
+
+.btn-text:active {
+    color: var(--blue_press);
+}
+
+/*--------- КНОПКИ (END)--------*/

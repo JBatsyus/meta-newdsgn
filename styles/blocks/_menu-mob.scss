@@ -1,0 +1,130 @@
+@use "../helpers"as *;
+
+/*---------МОБИЛЬНОЕ МЕНЮ (START)--------*/
+.menu-mob {
+    display: block;
+    background-color: var(--white);
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    height: calc(100vh - 78px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    overflow-y: auto;
+    z-index: 100;
+
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .menu-mob__inner {
+        padding: 40px 40px 24px 40px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+
+
+        @include mobile {
+            padding: 32px 16px 24px 16px;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 32px;
+
+        @include mobile {
+            flex-direction: column;
+            row-gap: 12px;
+        }
+    }
+
+    &__contact-item {
+        font-size: 16px;
+        line-height: 0.86;
+    }
+
+    &__menu {
+        border-radius: 16px;
+        border: none;
+        padding: 0;
+        background: var(--white);
+        margin-bottom: 20px;
+    }
+
+    &__menu-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+
+        >* {
+            padding-bottom: 18px;
+            border-bottom: var(--border-gray_light);
+        }
+
+        >*:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__menu-item {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    &__menu-item:not(:last-child) {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    &__menu-link {
+        white-space: nowrap;
+        text-shadow: none;
+        transition: text-shadow 0.2s;
+
+        &:hover {
+            text-shadow: 0 0 0.65px var(--blue_black), 0 0 0.65px var(--blue_black);
+        }
+    }
+
+    &__socials-list {
+        display: flex;
+        column-gap: 8px;
+    }
+
+    &__socials-item {
+        height: 32px;
+        width: 32px;
+
+        svg {
+            display: block;
+            color: var(--gray_blue_dark);
+            transition: color 0.2s ease;
+        }
+
+        &:hover svg,
+        &:focus-visible svg {
+            color: var(--blue_hover);
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 24px;
+        margin-top: auto;
+    }
+}
+
+.menu-mob.active {
+    opacity: 1;
+    visibility: visible;
+    overscroll-behavior: none;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+/*---------МОБИЛЬНОЕ МЕНЮ (END)--------*/

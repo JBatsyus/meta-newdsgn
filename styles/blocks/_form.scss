@@ -1,0 +1,266 @@
+@use "../helpers"as *;
+
+/*---------- ФОРМА (START)---------------------*/
+.form-section {
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 20px;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__image {
+        grid-column: 5 span;
+        border: var(--border-gray_light);
+        border-radius: 24px;
+        overflow: hidden;
+
+        @include tablet {
+            display: none;
+        }
+
+        &-img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__form {
+        grid-column: 7 span;
+        border: var(--border-gray_light);
+        border-radius: 24px;
+        padding: 40px 48px;
+        background-color: var(--gray_2);
+
+        @include tablet {
+            grid-column: 1;
+            padding: 32px 24px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 1.1;
+        margin-bottom: 32px;
+
+        @include tablet {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__form-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+    }
+
+    &__field {
+        display: grid;
+        row-gap: 8px;
+        position: relative;
+
+        // &--required .form-section__label::after {
+        //     content: " *";
+        //     color: #e74c3c;
+        // }
+
+        // &--required .form-section__input {
+        //     border-color: #e74c3c;
+        // }
+    }
+
+    &__label {
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    &__input,
+    &__field .choices__inner,
+    &__textarea {
+        width: 100%;
+        border: var(--border-gray_light);
+        border-radius: 8px;
+        padding: 10px 16px;
+        height: 40px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.2;
+
+        color: var(--gray_blue_dark);
+        transition: border-color 0.4s ease;
+        background-color: var(--white);
+
+        &:focus {
+            outline: none;
+            border-color: var(--blue_dark);
+        }
+    }
+
+    &__textarea {
+        height: 40px;
+        resize: none;
+        overflow: hidden;
+
+        @include tablet {
+            height: 80px;
+        }
+    }
+
+    // Кастомизация Choices
+    &__field .choices__inner {
+        min-height: 40px;
+    }
+
+    &__field .choices__list--single {
+        padding: 0;
+    }
+
+    .is-open .choices__inner {
+        background-color: var(--white);
+    }
+
+    &__field .choices__list--dropdown {
+        border: 1px solid #d9d9d9;
+        border-radius: 8px;
+        padding: 4px 16px;
+        top: 48px;
+        // margin-top: 8px;
+    }
+
+    &__field .choices__list--dropdown .choices__item {
+        position: relative;
+        padding-block: 12px;
+        border-bottom: var(--border-gray_light);
+    }
+
+    &__field .choices[data-type*=select-one]:after {
+        content: '';
+        display: block;
+        width: 14px;
+        height: 5px;
+        background: url('../icons/vv.svg') no-repeat center / contain;
+        border: none;
+        position: absolute;
+        right: 11.5px;
+        top: 50%;
+        margin-top: -3px;
+        pointer-events: none;
+    }
+
+    &__field .choices[data-type*=select-one].is-open:after {
+        transform: rotate(180deg);
+    }
+
+    &__field .choices__list--dropdown .choices__item:last-child {
+        border-bottom: none;
+    }
+
+    &__field .choices__list--dropdown .choices__item--selectable.is-highlighted:after {
+        display: none;
+    }
+
+    &__field .choices__list--dropdown .choices__item--selectable {
+        padding-right: 0;
+    }
+
+
+
+    &__bottom {
+        grid-column: 1 / -1;
+    }
+
+    &__checkboxes {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 4px;
+        margin-bottom: 16px;
+    }
+
+    &__checkbox-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    &__checkbox {
+        &+.form-section__checkbox-label {
+            position: relative;
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        &+.form-section__checkbox-label::before {
+            content: "";
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            border: 1px solid var(--gray_blue_dark);
+            border-radius: 4px;
+            background: var(--white);
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        &:checked+.form-section__checkbox-label::before {
+            background: var(--blue_dark);
+            border-color: var(--blue_dark);
+        }
+
+        &:checked+.form-section__checkbox-label::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 9px;
+            border: solid var(--white);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+    }
+
+    &__checkbox-label {
+        position: relative;
+        display: inline-flex;
+
+        font-size: 14px;
+        line-height: 1.2;
+        color: var(--gray_blue_dark);
+
+        a {
+            font-weight: 500;
+            color: var(--blue_dark);
+
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__submit {
+        max-width: max-content;
+
+        @include tablet {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+/*---------- ФОРМА (END)---------------------*/

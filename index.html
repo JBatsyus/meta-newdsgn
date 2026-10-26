@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>META</title>
+    <meta name="description" content="META" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+    <link rel="stylesheet" href="./libs/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./libs/plugins/twentytwenty.css">
+    <link rel="stylesheet" href="./libs/plugins/choices.min.css">
+    <link rel="stylesheet" href="./libs/plugins/lenis.css">
+    <link rel="stylesheet" href="./libs/plugins/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+
+</head>
+
+<body>
+    <!--— HEADER START -->
+    <header class="header">
+        <div class="container">
+            <div class="header__body">
+
+                <div class="header__main">
+                    <div class="header__logo">
+                        Таргетированная реклама в <span class="header__logo-accent">Meta Ads</span>
+                    </div>
+
+                    <nav class="header__nav" aria-label="Основная навигация">
+                        <ul class="header__menu-list">
+                            <li class="header__menu-item">
+                                <a href="#for-whom" class="header__menu-link">
+                                    Для кого
+                                </a>
+                            </li>
+
+                            <li class="header__menu-item">
+                                <a href="#how-we-work" class="header__menu-link">
+                                    Как мы работаем
+                                </a>
+                            </li>
+
+                            <li class="header__menu-item">
+                                <a href="#reporting" class="header__menu-link">
+                                    Отчетность
+                                </a>
+                            </li>
+
+                            <li class="header__menu-item">
+                                <a href="#cases" class="header__menu-link">
+                                    Кейсы
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="header__actions">
+
+                    <ul class="header__socials" aria-label="Социальные сети">
+                        <li>
+                            <a href="https://t.me" class="header__social-link" target="_blank" rel="noopener noreferrer"
+                                aria-label="Telegram">
+                                TG
+                            </a>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="header__btn btn" data-micromodal-trigger="modal-1">
+                        Заказать звонок
+                    </button>
+
+                    <a href="tel:+79999999999" class="header__phone btn">
+                        +7 (999) 999-99-99
+                    </a>
+
+                </div>
+
+                <button type="button" class="header__burger" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span class="header__burger-line"></span>
+                </button>
+
+            </div>
+
+            <div class="header__mobile-menu" id="mobile-menu" aria-hidden="true">
+                <div class="header__mobile-content">
+
+                    <div class="header__mobile-logo">
+                        Таргетированная реклама в <span class="header__logo-accent">Meta Ads</span>
+                    </div>
+
+                    <nav aria-label="Мобильная навигация">
+                        <ul class="header__mobile-list">
+                            <li>
+                                <a href="#for-whom" class="header__mobile-link">
+                                    Для кого
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#how-we-work" class="header__mobile-link">
+                                    Как мы работаем
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#reporting" class="header__mobile-link">
+                                    Отчетность
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#cases" class="header__mobile-link">
+                                    Кейсы
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__mobile-footer">
+                        <a href="tel:+79999999999" class="header__mobile-phone">
+                            +7 (999) 999-99-99
+                        </a>
+                        <ul class="header__mobile-socials" aria-label="Социальные сети">
+                            <li>
+                                <a href="https://t.me" class="header__mobile-social-link" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Telegram">
+                                    TG
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__backdrop"></div>
+    </header>
+
+    <!--— HEADER END -->
+    <main class="main" aria-label="Содержимое страницы">
+        <!--— HERO START-->
+        <section class="hero section">
+            <div class="container">
+                <div class="hero__main bento-grid">
+                    <div class="hero__content" data-reveal>
+                        <span class="hero__eyebrow">Meta Ads</span>
+                        <h1 class="hero__title">
+                            <span class="hero__title-accent">Привлекаем</span> прогнозируемый поток
+                            <span class="hero__title-accent">клиентов</span> в ваш бизнес по всему миру
+                            через <span class="hero__title-accent">Meta Ads</span>
+                        </h1>
+
+                        <p class="hero__description">
+                            Официальный договор, закрывающие документы с удобной оплатой без проблем с картами и счетами Meta.<br>
+                            Большой опыт международных запусков.
+                        </p>
+                        <div class="hero__actions">
+                            <button type="button" class="hero__btn btn btn--primary" data-micromodal-trigger="modal-1">
+                                Рассчитать медиаплан
+                            </button>
+                            <button type="button" class="hero__btn hero__btn--ghost" data-micromodal-trigger="modal-1">
+                                Нужна консультация
+                            </button>
+                            <span class="hero__note">*работаем официально через юрлицо в Казахстане</span>
+                        </div>
+
+                    </div>
+
+                    <div class="hero__preview" data-reveal>
+                        <picture class="hero__picture">
+                            <img src="images/hero-meta.webp"
+                                alt="Интерфейс приложения Meta Ads Manager на экране смартфона" class="hero__img"
+                                loading="eager">
+                        </picture>
+                    </div>
+                </div>
+                <ul class="hero__benefits-list" data-reveal>
+                    <li class="hero__benefit-item">
+                        <span class="hero__benefit-num" aria-hidden="true">01</span>
+                        <p class="hero__benefit-text">Привлечь целевых подписчиков в Instagram</p>
+                    </li>
+                    <li class="hero__benefit-item">
+                        <span class="hero__benefit-num" aria-hidden="true">02</span>
+                        <p class="hero__benefit-text">Получать стабильные лиды из Facebook и Instagram</p>
+                    </li>
+                    <li class="hero__benefit-item">
+                        <span class="hero__benefit-num" aria-hidden="true">03</span>
+                        <p class="hero__benefit-text">Понимать, какие кампании реально приносят прибыль</p>
+                    </li>
+                    <li class="hero__benefit-item">
+                        <span class="hero__benefit-num" aria-hidden="true">04</span>
+                        <p class="hero__benefit-text">Масштабировать продажи в любой точке мира</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--—HERO END-->
+        <!--— PROBLEMS START-->
+        <section class="problems section" id="for-whom">
+            <div class="container">
+                <div class="problems__header section-header">
+                    <h2 class="h2 problems__title">Проблема рынка</h2>
+                    <span class="problems__tag section-header__tag">Почему реклама не работает</span>
+                </div>
+                <div class="problems__list bento-grid" data-reveal-group>
+                    <article class="problems__item spotlight-card bento-card" data-reveal>
+                        <div class="problems__head">
+                            <div class="problems__icon-wrapper" aria-hidden="true">
+                                <i data-lucide="git-branch"></i>
+                            </div>
+                            <h3 class="problems__item-title">Нет системной стратегии</h3>
+                        </div>
+                        <p class="problems__item-text">
+                            Когда аналитика не выстроена, а рекламу управляют опираясь не на цифры, а на ощущения.
+                            Гипотезы и их результаты не фиксируются и не сравниваются.
+                        </p>
+                    </article>
+                    <article class="problems__item spotlight-card" data-reveal>
+                        <div class="problems__head">
+                            <div class="problems__icon-wrapper" aria-hidden="true">
+                                <i data-lucide="bar-chart-3"></i>
+                            </div>
+                            <h3 class="problems__item-title">Не настроенная аналитика</h3>
+                        </div>
+                        <p class="problems__item-text">
+                            Часто не настроен даже базовый пиксель Meta. События не передаются корректно. Нет
+                            сквозной
+                            аналитики. В результате — непонятно: откуда приходят заявки какие креативы работают
+                            почему
+                            стоимость лида растёт
+                        </p>
+                    </article>
+                    <article class="problems__item spotlight-card" data-reveal>
+                        <div class="problems__head">
+                            <div class="problems__icon-wrapper" aria-hidden="true">
+                                <i data-lucide="eye-off"></i>
+                            </div>
+                            <h3 class="problems__item-title">Непрозрачность работы</h3>
+                        </div>
+                        <p class="problems__item-text">
+                            Нет доступа к собственной рекламе в кабинете. Отчёты формальные, без выводов и
+                            конкретных
+                            предложений. Специалисты редко отвечают на сообщения.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!--— PROBLEMS END-->
+        <!--— GEO START-->
+        <section class="geo-banner section" aria-labelledby="geo-banner-title">
+            <div class="container">
+                <h2 id="geo-banner-title" class="visually-hidden">География работы и локация проектов</h2>
+                <div class="geo-banner__body" data-reveal>
+                    <div class="geo-banner__media" aria-hidden="true">
+                        <span class="geo-banner__label">Geo</span>
+                    </div>
+                    <div class="geo-banner__copy">
+                        <p class="geo-banner__text geo-banner__text--lead">
+                            Мы работаем с русскоговорящими предпринимателями, ведущими бизнес в Европе и других странах.
+                        </p>
+                        <p class="geo-banner__text geo-banner__text--more">
+                            Запускаем рекламу локально или глобально — в зависимости от задач.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--— GEO END-->
+        <!--— PROCESS START-->
+        <section class="process section" id="how-we-work">
+            <div class="container">
+                <div class="process__header section-header">
+                    <h2 class="process__title h2">Как мы запускаем и ведём рекламу</h2>
+                    <p class="process__subtitle">Один понятный процесс: от брифа и аналитики до масштабирования.
+                        Фиксируем гипотезы, считаем результат и усиливаем то, что дает прибыль</p>
+                </div>
+                <ol class="process__grid bento-grid" data-reveal-group>
+                    <li class="process__card spotlight-card bento-card" data-reveal>
+                        <div class="process__step-num">
+                            <span class="process__step-index">01</span>
+                        </div>
+                        <div class="process__card-content">
+                            <h3 class="process__card-title">Бриф <br> и цели</h3>
+                            <p class="process__card-text">Погружаемся в бизнес, KPI и ограничения</p>
+                        </div>
+                    </li>
+                    <li class="process__card spotlight-card" data-reveal>
+                        <div class="process__step-num">
+                            <span class="process__step-index">02</span>
+                        </div>
+                        <div class="process__card-content">
+                            <h3 class="process__card-title">Анализ<br> и прогноз</h3>
+                            <p class="process__card-text">Оцениваем нишу, потенциал и бюджет</p>
+                        </div>
+                    </li>
+                    <li class="process__card spotlight-card" data-reveal>
+                        <div class="process__step-num">
+                            <span class="process__step-index">03</span>
+                        </div>
+                        <div class="process__card-content">
+                            <h3 class="process__card-title">Настройка<br> аналитики</h3>
+                            <p class="process__card-text">Pixel, события, сквозная аналитика</p>
+                        </div>
+                    </li>
+                    <li class="process__card spotlight-card" data-reveal>
+                        <div class="process__step-num">
+                            <span class="process__step-index">04</span>
+                        </div>
+                        <div class="process__card-content">
+                            <h3 class="process__card-title">Подготовка<br> кампаний</h3>
+                            <p class="process__card-text">Структура, аудитории и креативы</p>
+                        </div>
+                    </li>
+                    <li class="process__card process__card--wide process__card--graph spotlight-card" data-reveal>
+                        <div class="process__step-num">
+                            <span class="process__step-index">05</span>
+                        </div>
+                        <div class="process__card-content">
+                            <h3 class="process__card-title">Запуск и тесты</h3>
+                            <p class="process__card-text">Проверяем гипотезы и первые результаты</p>
+                        </div>
+                    </li>
+                    <li class="process__card process__card--wide process__card--cup spotlight-card" data-reveal>
+                        <div class="process__step-num">
+                            <span class="process__step-index">06</span>
+                        </div>
+                        <div class="process__card-content">
+                            <h3 class="process__card-title">Оптимизация и рост</h3>
+                            <p class="process__card-text">Масштабируем то, что улучшает CPL, CAC и ROI</p>
+                        </div>
+                    </li>
+                </ol>
+                <div class="process__benefits" data-reveal>
+                    <div class="process__benefit-item">
+                        <h4 class="process__benefit-title">Аналитика с первого дня</h4>
+                        <p class="process__benefit-text">Не запускаем рекламу без цифр, анализируем и изучаем</p>
+                    </div>
+                    <div class="process__benefit-item">
+                        <h4 class="process__benefit-title">Команда на проекте</h4>
+                        <p class="process__benefit-text">Проектный менеджер, специалист по рекламе, аналитик и дизайнер
+                        </p>
+                    </div>
+                    <div class="process__benefit-item">
+                        <h4 class="process__benefit-title">Прозрачность и контроль</h4>
+                        <p class="process__benefit-text">Доступы у вас. Ежедневная автоматическая отчётность в удобном
+                            виде</p>
+                    </div>
+                    <div class="process__benefit-item">
+                        <h4 class="process__benefit-title">Международная экспертиза</h4>
+                        <p class="process__benefit-text">Юрлицо в Казахстане, проекты в ЕС и других странах</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--— PROCESS END-->
+        <!-- DASHBOARD START -->
+        <section class="dashboard section" id="reporting">
+            <div class="container">
+                <div class="dashboard__header section-header">
+                    <div class="dashboard__header-main">
+                        <span class="dashboard__eyebrow">Отчётность</span>
+                        <h2 class="dashboard__title h2">Прозрачный дашборд 24/7</h2>
+                    </div>
+                </div>
+                <div class="dashboard__grid" data-reveal-group>
+                    <div class="dashboard__left-col" data-reveal>
+                        <div class="dashboard__scheme bento-card">
+                            <picture class="dashboard__scheme-picture">
+
+                                <source srcset="images/dashboard-scheme-mobile.svg" media="(max-width: 767px)">
+
+                                <source srcset="images/dashboard-scheme-tablet.svg" media="(max-width: 992px)">
+
+                                <img src="images/dashboard-scheme.svg"
+                                    alt="Схема интеграции данных: CRM, API, Базы данных в Power BI и GSheets"
+                                    class="dashboard__scheme-img" loading="lazy">
+                            </picture>
+
+                        </div>
+                        <div class="dashboard__info-note">
+                            <div class="dashboard__info-icon-box" aria-hidden="true">
+                                <i data-lucide="info"></i>
+                                <img src="images/icon-info-circle.svg" alt="" class="dashboard__info-icon"
+                                    loading="lazy">
+                            </div>
+                            <p class="dashboard__info-text">
+                                Вы видите реальные цену лида и ROMI, а не формальные отчеты раз в месяц
+                            </p>
+                        </div>
+                    </div>
+                    <div class="dashboard__slider-wrapper" data-reveal>
+                        <div class="swiper dashboard__swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide dashboard__slide spotlight-card">
+                                    <div class="dashboard__slide-inner">
+                                        <div class="dashboard__preview">
+                                            <img src="images/laptop-mockup-1.webp"
+                                                alt="Дашборд на экране ноутбука: Цель отчета"
+                                                class="dashboard__laptop-img">
+                                        </div>
+                                        <div class="dashboard__slide-content">
+                                            <h3 class="dashboard__slide-title">Цель отчета</h3>
+                                            <p class="dashboard__slide-desc">
+                                                Верхне-уровневая воронка по план-факту по лидам, бюджету и CPL, статус
+                                                по оплате счетов, сплит по каналам
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide dashboard__slide spotlight-card">
+                                    <div class="dashboard__slide-inner">
+                                        <div class="dashboard__preview">
+                                            <img src="images/laptop-mockup-2.webp"
+                                                alt="Дашборд на экране ноутбука: Аналитика кампаний"
+                                                class="dashboard__laptop-img">
+                                        </div>
+                                        <div class="dashboard__slide-content">
+                                            <h3 class="dashboard__slide-title">Цель отчета</h3>
+                                            <p class="dashboard__slide-desc">
+                                                Ежедневное отслеживание эффективности по каналам
+                                                в разрезе вала, УЦ и целевых обращений
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide dashboard__slide spotlight-card">
+                                    <div class="dashboard__slide-inner">
+                                        <div class="dashboard__preview">
+                                            <img src="images/laptop-mockup-3.webp"
+                                                alt="Дашборд на экране ноутбука: Аналитика кампаний"
+                                                class="dashboard__laptop-img">
+                                        </div>
+                                        <div class="dashboard__slide-content">
+                                            <h3 class="dashboard__slide-title">Цель отчета</h3>
+                                            <p class="dashboard__slide-desc">
+                                                Отслеживание план-факта по каналам,
+                                                оценка эффективности
+                                                по регионам, оценка CR из всех звонков в целевые
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="dashboard__nav-btn dashboard__nav-btn--prev"
+                            aria-label="Предыдущий слайд"></button>
+                        <button type="button" class="dashboard__nav-btn dashboard__nav-btn--next"
+                            aria-label="Следующий слайд"></button>
+                    </div>
+
+                    <div class="dashboard__right-widgets" data-reveal>
+
+                        <a href="#cases" class="dashboard__widget-item bento-card">
+                            <div class="dashboard__widget-icon-box" aria-hidden="true">
+                                <i data-lucide="images"></i>
+                                <img src="images/icon-image-gallery.png" alt="" class="dashboard__widget-icon">
+                            </div>
+                            <span class="dashboard__widget-text">Больше примеров</span>
+                        </a>
+
+                        <button type="button" class="dashboard__widget-item dashboard__widget-item--cta bento-card"
+                            data-micromodal-trigger="modal-1">
+                            <div class="dashboard__widget-icon-box" aria-hidden="true">
+                                <i data-lucide="message-circle"></i>
+                                <img src="images/icon-chat-blue.png" alt="" class="dashboard__widget-icon">
+                            </div>
+                            <span class="dashboard__widget-text">Оставить заявку</span>
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- DASHBOARD END -->
+
+        <!-- CASES START -->
+        <section class="cases section" id="cases" aria-labelledby="cases-title">
+            <div class="container">
+                <div class="cases__header" data-reveal>
+                    <span class="cases__eyebrow">Кейсы</span>
+                    <h2 class="cases__title h2" id="cases-title">Результаты проектов</h2>
+                </div>
+
+                <div class="cases__grid" data-reveal-group>
+                    <article class="cases__item" data-reveal>
+                        <div class="cases__media">
+                            <img src="images/case-fintech-bank.jpg" alt="Смартфон с интерфейсом мессенджера и неоновой виртуальной картой"
+                                class="cases__img" loading="lazy" width="1280" height="720">
+                        </div>
+                        <div class="cases__body">
+                            <span class="cases__direction">FinTech · Таргетированная реклама</span>
+                            <h3 class="cases__item-title">Цифровой банк для зумеров в Европе</h3>
+                            <p class="cases__item-text">
+                                Привлечение пользователей в банковский сервис внутри мессенджеров на рынках Франции и Испании.
+                                За счет мем-креативов, LAL-аудиторий и увода в Telegram-бота получаем регистрации по 2,9&nbsp;€
+                                при плановом KPI 4,64&nbsp;€.
+                            </p>
+                            <ul class="cases__tags" aria-label="Теги кейса">
+                                <li class="cases__tag">FinTech и необанки</li>
+                                <li class="cases__tag">Таргет Facebook &amp; Instagram</li>
+                                <li class="cases__tag">Лидогенерация в бот</li>
+                                <li class="cases__tag">Рынок Европы</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="cases__item" data-reveal>
+                        <div class="cases__media">
+                            <img src="images/case-beauty-kz.jpg" alt="Мокап устройства с витриной интернет-магазина натуральной косметики"
+                                class="cases__img" loading="lazy" width="1280" height="720">
+                        </div>
+                        <div class="cases__body">
+                            <span class="cases__direction">E-commerce &amp; Beauty · Performance</span>
+                            <h3 class="cases__item-title">Косметический бренд в Казахстане</h3>
+                            <p class="cases__item-text">
+                                Масштабирование онлайн-продаж французской уходовой косметики через динамический ретаргетинг
+                                и оптимизацию кампаний на корзину. Увеличили количество заказов в интернет-магазине в 1,6 раза
+                                при снижении стоимости покупки на 10%.
+                            </p>
+                            <ul class="cases__tags" aria-label="Теги кейса">
+                                <li class="cases__tag">Интернет-магазины</li>
+                                <li class="cases__tag">Beauty-ритейл</li>
+                                <li class="cases__tag">Таргет Facebook &amp; Instagram</li>
+                                <li class="cases__tag">Рост e-commerce продаж</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="cases__item" data-reveal>
+                        <div class="cases__media">
+                            <img src="images/case-architecture-italy.jpg" alt="Современный интерьер с UI-виджетами мудборда и роста заявок"
+                                class="cases__img" loading="lazy" width="1280" height="720">
+                        </div>
+                        <div class="cases__body">
+                            <span class="cases__direction">Недвижимость и дизайн · Лидогенерация</span>
+                            <h3 class="cases__item-title">Архитектурное бюро в Италии</h3>
+                            <p class="cases__item-text">
+                                Привлечение заявок на комплексный дизайн интерьеров с помощью интерактивного квиза
+                                с подбором мудборда и сквозной интеграции с CRM. Увеличили поток целевых лидов более чем в 2 раза
+                                (с 35 до 75 в месяц) и снизили их стоимость в 1,6 раза в период сезонного спада.
+                            </p>
+                            <ul class="cases__tags" aria-label="Теги кейса">
+                                <li class="cases__tag">Дизайн интерьеров</li>
+                                <li class="cases__tag">Квиз-маркетинг и CRM</li>
+                                <li class="cases__tag">Таргет Facebook &amp; Instagram</li>
+                                <li class="cases__tag">Рынок Европы</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="cases__item" data-reveal>
+                        <div class="cases__media">
+                            <img src="images/case-tourism-belarus.jpg" alt="Круизный лайнер на фоне природы с карточкой бронирования тура"
+                                class="cases__img" loading="lazy" width="1280" height="720">
+                        </div>
+                        <div class="cases__body">
+                            <span class="cases__direction">Туризм · Лидогенерация</span>
+                            <h3 class="cases__item-title">Туристическая компания в Беларуси</h3>
+                            <p class="cases__item-text">
+                                Привлечение заявок на бронирование речных и морских круизов по России и Азии через
+                                таргетированную рекламу и лид-формы. Оптимизация воронки увеличила объем лидов в 1,5 раза
+                                (с 400 до 600 в месяц) при одновременном снижении стоимости заявки.
+                            </p>
+                            <ul class="cases__tags" aria-label="Теги кейса">
+                                <li class="cases__tag">Туризм и круизы</li>
+                                <li class="cases__tag">Лид-формы и квизы</li>
+                                <li class="cases__tag">Таргет Facebook &amp; Instagram</li>
+                                <li class="cases__tag">Рынок СНГ</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- CASES END -->
+
+        <section class="cta-banner section">
+            <div class="container">
+                <div class="cta-banner__body" data-reveal>
+                    <h2 class="cta-banner__title h2">
+                        Получите расчет стоимости лида и тестового бюджета
+                        под вашу нишу и страну
+                    </h2>
+                    <p class="cta-banner__description">
+                        Проведём короткий аудит, зададим уточняющие вопросы и честно скажем, есть ли потенциал у Meta
+                        Ads в вашей нише. Если видим ограничения — предупредим заранее.
+                    </p>
+                    <div class="cta-banner__actions">
+                        <button type="button" class="cta-banner__btn btn btn--primary"
+                            data-micromodal-trigger="modal-1">Получить медиаплан</button>
+                        <button type="button" class="cta-banner__btn btn btn--secondary"
+                            data-micromodal-trigger="modal-1">Нужна консультация</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ START -->
+        <section class="faq section" id="faq">
+            <div class="container">
+                <div class="faq__intro" data-reveal>
+                    <span class="faq__eyebrow">FAQ</span>
+                    <h2 class="faq__title h2">Отвечаем на популярные вопросы</h2>
+                </div>
+                <div class="faq__layout">
+                    <div class="faq__main">
+                        <div class="faq__accordion-group">
+                            <div class="faq__accordion-list">
+                            <div class="faq__accordion-item" data-reveal>
+                                <details class="faq__accordion-details" name="faq" open>
+                                    <summary class="faq__accordion-summary">
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-1">А если мой аккаунт заблокируют?</span>
+                                        <span class="faq__accordion-toggle" aria-hidden="true"></span>
+                                    </summary>
+                                </details>
+                                <div class="faq__accordion-content" role="definition" id="faq-1">
+                                    <div class="faq__accordion-inner">
+                                        <div class="faq__accordion-body">
+                                            Мы используем только корректные способы продвижения и соблюдаем правила
+                                            Meta.
+                                            При блокировке оперативно подключаемся к восстановлению.
+                                            Также используем резервные бизнес-менеджеры, чтобы не останавливать
+                                            кампании.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__accordion-item" data-reveal>
+                                <details class="faq__accordion-details" name="faq">
+                                    <summary class="faq__accordion-summary">
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-2">С каким бюджетом имеет смысл запускаться?</span>
+                                        <span class="faq__accordion-toggle" aria-hidden="true"></span>
+                                    </summary>
+                                </details>
+                                <div class="faq__accordion-content" role="definition" id="faq-2">
+                                    <div class="faq__accordion-inner">
+                                        <div class="faq__accordion-body">
+                                            Мы используем только корректные способы продвижения и соблюдаем правила
+                                            Meta.
+                                            При блокировке оперативно подключаемся к восстановлению.
+                                            Также используем резервные бизнес-менеджеры, чтобы не останавливать
+                                            кампании.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__accordion-item" data-reveal>
+                                <details class="faq__accordion-details" name="faq">
+                                    <summary class="faq__accordion-summary">
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-3">Как быстро появятся первые заявки?</span>
+                                        <span class="faq__accordion-toggle" aria-hidden="true"></span>
+                                    </summary>
+                                </details>
+                                <div class="faq__accordion-content" role="definition" id="faq-3">
+                                    <div class="faq__accordion-inner">
+                                        <div class="faq__accordion-body">
+                                            Мы используем только корректные способы продвижения и соблюдаем правила
+                                            Meta.
+                                            При блокировке оперативно подключаемся к восстановлению.
+                                            Также используем резервные бизнес-менеджеры, чтобы не останавливать
+                                            кампании.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__accordion-item" data-reveal>
+                                <details class="faq__accordion-details" name="faq">
+                                    <summary class="faq__accordion-summary">
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-4">Почему лучше обратиться в агентство, чем к фрилансеру?</span>
+                                        <span class="faq__accordion-toggle" aria-hidden="true"></span>
+                                    </summary>
+                                </details>
+                                <div class="faq__accordion-content" role="definition" id="faq-4">
+                                    <div class="faq__accordion-inner">
+                                        <div class="faq__accordion-body">
+                                            Мы используем только корректные способы продвижения и соблюдаем правила
+                                            Meta.
+                                            При блокировке оперативно подключаемся к восстановлению.
+                                            Также используем резервные бизнес-менеджеры, чтобы не останавливать
+                                            кампании.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__accordion-item" data-reveal>
+                                <details class="faq__accordion-details" name="faq">
+                                    <summary class="faq__accordion-summary">
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-5">В какой валюте и как происходит оплата услуг и рекламного бюджета?</span>
+                                        <span class="faq__accordion-toggle" aria-hidden="true"></span>
+                                    </summary>
+                                </details>
+                                <div class="faq__accordion-content" role="definition" id="faq-5">
+                                    <div class="faq__accordion-inner">
+                                        <div class="faq__accordion-body">
+                                            Мы используем только корректные способы продвижения и соблюдаем правила
+                                            Meta.
+                                            При блокировке оперативно подключаемся к восстановлению.
+                                            Также используем резервные бизнес-менеджеры, чтобы не останавливать
+                                            кампании.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__accordion-item" data-reveal>
+                                <details class="faq__accordion-details" name="faq">
+                                    <summary class="faq__accordion-summary">
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-6">Предоставляете ли вы закрывающие документы для юридических лиц?</span>
+                                        <span class="faq__accordion-toggle" aria-hidden="true"></span>
+                                    </summary>
+                                </details>
+                                <div class="faq__accordion-content" role="definition" id="faq-6">
+                                    <div class="faq__accordion-inner">
+                                        <div class="faq__accordion-body">
+                                            Мы используем только корректные способы продвижения и соблюдаем правила
+                                            Meta.
+                                            При блокировке оперативно подключаемся к восстановлению.
+                                            Также используем резервные бизнес-менеджеры, чтобы не останавливать
+                                            кампании.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq__accordion-item" data-reveal>
+                                <details class="faq__accordion-details" name="faq">
+                                    <summary class="faq__accordion-summary">
+                                        <span class="faq__accordion-question" role="term" aria-details="faq-7">Как вы работаете с локальными языками и языковыми барьерами аудитории за рубежом?</span>
+                                        <span class="faq__accordion-toggle" aria-hidden="true"></span>
+                                    </summary>
+                                </details>
+                                <div class="faq__accordion-content" role="definition" id="faq-7">
+                                    <div class="faq__accordion-inner">
+                                        <div class="faq__accordion-body">
+                                            Мы используем только корректные способы продвижения и соблюдаем правила
+                                            Meta.
+                                            При блокировке оперативно подключаемся к восстановлению.
+                                            Также используем резервные бизнес-менеджеры, чтобы не останавливать
+                                            кампании.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="faq__cta" data-reveal>
+                        <div class="faq__cta-content">
+                            <h3 class="faq__cta-title">
+                                Рассчитаем оптимальный рекламный бюджет на месяц. Бесплатно
+                            </h3>
+                        </div>
+                        <button type="button" class="faq__cta-btn btn btn--primary" data-title="Обратный звонок"
+                            data-btn="Отправить" data-micromodal-trigger="modal-1">Получить расчёт</button>
+                    </aside>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ END -->
+
+
+
+
+    </main>
+    <!--— FOOTER START -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__body" data-reveal>
+                <div class="footer__top">
+                    <div class="footer__brand">
+                        <p class="footer__logo">Таргетированная реклама в <span class="footer__logo-accent">Meta Ads</span></p>
+                        <nav aria-label="Навигация в подвале">
+                            <ul class="footer__menu-list">
+                                <li class="footer__menu-item"><a href="#for-whom" class="footer__menu-link">Для кого</a></li>
+                                <li class="footer__menu-item"><a href="#how-we-work" class="footer__menu-link">Как мы работаем</a></li>
+                                <li class="footer__menu-item"><a href="#reporting" class="footer__menu-link">Отчетность</a></li>
+                                <li class="footer__menu-item"><a href="#cases" class="footer__menu-link">Кейсы</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer__actions">
+                        <ul class="footer__socials" aria-label="Социальные сети">
+                            <li>
+                                <a href="https://t.me" class="footer__social-link" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Telegram">TG</a>
+                            </li>
+                        </ul>
+                        <div class="footer__cta">
+                            <button type="button" class="footer__btn btn" data-micromodal-trigger="modal-1">Заказать звонок</button>
+                            <a href="tel:+79999999999" class="footer__phone btn">+7 (999) 999-99-99</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p class="footer__copyright">©2026 все права защищены</p>
+                    <div class="footer__legal">
+                        <a href="#privacy" class="footer__legal-link">Политика конфиденциальности</a>
+                        <a href="#personal-data" class="footer__legal-link">Персональные данные</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--— FOOTER END -->
+
+
+
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <div class="modal__intro">
+                    <div class="modal__header">
+                        <h2 class="modal__title" id="modal-1-title">Оценим потенциал проекта</h2>
+                        <button type="button" class="modal__close" data-micromodal-close aria-label="Закрыть">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M6.4 6.4L17.6 17.6M17.6 6.4L6.4 17.6" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="modal__text">
+                        Проведём короткий аудит, зададим уточняющие вопросы и честно скажем,
+                        есть ли потенциал у <span class="modal__accent">Meta Ads</span> в вашей нише.
+                    </p>
+                </div>
+
+                <form class="modal__form" id="contactForm2" action="#" method="post">
+                    <div class="modal__fields">
+                        <label class="modal__field">
+                            <span class="modal__label">ФИО<span class="modal__required" aria-hidden="true">*</span></span>
+                            <input class="modal__input" type="text" name="name" autocomplete="name" placeholder="ФИО" required>
+                        </label>
+
+                        <label class="modal__field">
+                            <span class="modal__label">Номер телефона<span class="modal__required"
+                                    aria-hidden="true">*</span></span>
+                            <input class="modal__input input-phone" type="tel" name="phone" autocomplete="tel"
+                                inputmode="tel" placeholder="+7 (900) 999-99-99"
+                                pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}"
+                                title="Введите телефон полностью: +7 (900) 999-99-99" required>
+                        </label>
+
+                        <label class="modal__field">
+                            <span class="modal__label">Страна продвижения<span class="modal__required"
+                                    aria-hidden="true">*</span></span>
+                            <select class="modal__input modal__select" name="country" required>
+                                <option value="Канада" selected>Канада</option>
+                                <option value="Казахстан">Казахстан</option>
+                                <option value="Германия">Германия</option>
+                                <option value="Польша">Польша</option>
+                                <option value="Испания">Испания</option>
+                                <option value="Франция">Франция</option>
+                                <option value="Италия">Италия</option>
+                                <option value="Чехия">Чехия</option>
+                                <option value="Великобритания">Великобритания</option>
+                                <option value="США">США</option>
+                                <option value="ОАЭ">ОАЭ</option>
+                            </select>
+                        </label>
+
+                        <label class="modal__field">
+                            <span class="modal__label">Ссылка на сайт</span>
+                            <input class="modal__input" type="url" name="website" autocomplete="url"
+                                inputmode="url" placeholder="https://yoursite.com">
+                        </label>
+                    </div>
+
+                    <div class="modal__footer">
+                        <label class="modal__consent">
+                            <input class="modal__checkbox" type="checkbox" name="consent" required>
+                            <span class="modal__consent-text">
+                                Я даю согласие на обработку своих
+                                <a href="#personal-data" class="modal__consent-link">персональных данных</a>
+                            </span>
+                        </label>
+                        <button type="submit" class="modal__submit btn btn--primary">Рассчитать медиаплан</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="form-toast" role="status" aria-live="polite" aria-hidden="true">
+        <p class="toast__text">Заявка отправлена!</p>
+        <button type="button" class="toast__close" aria-label="Закрыть">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- JS -->
+
+    <!-- Библиотеки -->
+    <script src="./libs/plugins/swiper-bundle.min.js"></script>
+    <script src="./libs/plugins/jquery.min.js"></script>
+    <script src="./libs/plugins/choices.min.js"></script>
+    <script src="./libs/plugins/lenis.min.js"></script>
+    <script src="./libs/plugins/jquery.maskedinput.js"></script>
+
+    <!--main js -->
+    <script src="./scripts/main.js" defer></script>
+
+    <!-- Micromodal -->
+    <script src="https://unpkg.com/micromodal@0.4.10/dist/micromodal.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.header');
+            const burger = document.querySelector('.header__burger');
+            const menu = document.querySelector('.header__mobile-menu');
+            const backdrop = document.querySelector('.header__backdrop');
+
+            if (!header || !burger || !menu || !backdrop) {
+                return;
+            }
+
+            const openMenu = () => {
+                header.classList.add('menu-open');
+                burger.setAttribute('aria-expanded', 'true');
+                burger.setAttribute('aria-label', 'Закрыть меню');
+                menu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('no-scroll');
+            };
+
+            const closeMenu = () => {
+                header.classList.remove('menu-open');
+                burger.setAttribute('aria-expanded', 'false');
+                burger.setAttribute('aria-label', 'Открыть меню');
+                menu.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('no-scroll');
+            };
+
+            burger.addEventListener('click', () => {
+                header.classList.contains('menu-open') ?
+                    closeMenu() :
+                    openMenu();
+            });
+
+            backdrop.addEventListener('click', closeMenu);
+
+            document.querySelectorAll('a[href^="#"]').forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    const target = document.querySelector(link.getAttribute('href'));
+
+                    if (!target) {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    closeMenu();
+
+                    window.scrollTo({
+                        top: target.getBoundingClientRect().top + window.scrollY -
+                            header.offsetHeight - 20,
+                        behavior: 'smooth',
+                    });
+
+                    history.replaceState(null, '', window.location.pathname + window.location
+                        .search);
+                });
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1199) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

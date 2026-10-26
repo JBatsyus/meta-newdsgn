@@ -1,0 +1,695 @@
+@use "../helpers"as *;
+
+/*---------МОДАЛКА (START)--------*/
+.modal__overlay {
+    z-index: 100;
+
+}
+
+
+
+
+.modal__overlay.is-open {
+    z-index: 100;
+}
+
+/* Вторая модалка — всегда поверх */
+#modal-1 .modal__overlay {
+    z-index: 101 !important;
+}
+
+.modal {
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(3px);
+
+        &:has(.modal-service) {
+            padding: 0 40px;
+
+            @include mobile {
+                padding: 0;
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+        width: 790px;
+        max-height: 100vh;
+        padding: 40px 48px;
+        border: var(--border-gray_light);
+        border-radius: 24px;
+        background: var(--gray_2);
+        box-sizing: border-box;
+        overflow-y: inherit;
+
+        @include tablet {
+            padding: 32px 24px;
+            width: 616px;
+        }
+
+        @include mobile {
+            padding: 24px 16px;
+            width: 100%;
+            height: 100vh;
+            border-radius: 0;
+        }
+
+        // Модификатор для модалки услуги
+        &.modal-service {
+            display: flex;
+            flex-direction: column;
+            width: 1330px;
+            padding: 40px;
+            max-height: 88vh;
+            min-height: 730px;
+            overflow: hidden;
+
+            @include tablet {
+                width: 100%;
+                padding: 32px;
+            }
+
+            @include mobile {
+                border-radius: 0;
+                padding: 24px 16px 70px 24px;
+                max-height: 100vh;
+                min-height: 500px;
+            }
+        }
+
+        &.modal-success,
+        &.modal-error {
+
+            border-radius: 16px;
+            padding: 24px;
+            width: 520px;
+            height: 390px;
+
+            @include tablet {
+                width: 688px;
+            }
+
+            @include mobile {
+                padding: 24px 16px;
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+
+    }
+
+    .modal-success &__title,
+    .modal-error &__title {
+        display: none;
+    }
+
+    .modal-success &__header,
+    .modal-error &__header {
+        margin-bottom: 16px;
+    }
+
+
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 1.1;
+
+        @include tablet {
+            font-size: 24px;
+        }
+    }
+
+    &__close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        margin-left: auto;
+        border-radius: 100%;
+        background-color: var(--gray_blue);
+        border: var(--border-gray_light) !important;
+
+        @include mobile {
+            height: 32px;
+            width: 32px;
+        }
+
+        &:before {
+            content: "\2715";
+            font-size: 18px;
+            font-weight: bold;
+            width: 14px;
+            color: var(--blue_dark);
+        }
+
+        &:hover:before {
+            color: var(--blue_hover);
+        }
+
+        &:active:before {
+            color: var(--blue_press);
+        }
+    }
+
+    // Стили внутри контекста .modal-service
+
+    &-service {
+        .modal__close {
+            height: 40px;
+            width: 40px;
+            flex-shrink: 0;
+        }
+
+        .modal__content {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            padding-top: 16px;
+            overflow: hidden;
+
+            flex-grow: 1;
+
+            @include tablet {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                padding-top: 24px;
+            }
+
+            @include mobile {
+                padding-top: 0;
+                gap: 24px;
+                overflow-y: auto; // Весь контент скроллится тут
+                max-height: 100%;
+
+
+            }
+        }
+
+        .modal__block {
+            grid-column: span 5;
+            position: sticky;
+            top: 0;
+            align-self: start;
+
+            @include tablet {
+                position: static;
+
+                grid-column: auto;
+                width: 100%;
+                display: flex;
+                column-gap: 16px;
+            }
+        }
+
+        .modal__text {
+            grid-column: span 7;
+
+            overflow-y: auto;
+            max-height: 100%;
+            padding-bottom: 24px;
+
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            @include tablet {
+                grid-column: auto;
+                width: 100%;
+            }
+
+            @include mobile {
+                overflow-y: visible;
+            }
+        }
+
+        .modal__header {
+            display: grid;
+            row-gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .modal__title {
+            color: var(--blue_dark);
+        }
+
+        .modal__price {
+            width: max-content;
+            padding: 8px 16px;
+            border: 1px solid #d9d9d9;
+            border-radius: 24px;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.2;
+
+            span {
+                font-weight: 600;
+            }
+        }
+
+        // унифицированные стили для текстовогог блока
+        .modal__description {
+            font-size: 18px;
+            line-height: 1.6;
+
+            @include tablet {
+                margin-bottom: 32px;
+            }
+
+            strong {
+                font-weight: 600;
+                color: var(--blue_dark);
+            }
+
+            h3 {
+                font-weight: 600;
+                margin-bottom: 16px;
+                line-height: 1.4;
+            }
+
+            p:not(:last-child) {
+                margin-bottom: 16px;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0 0 24px 0;
+                padding: 0;
+                display: grid;
+                row-gap: 12px;
+
+                li {
+
+
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 12px;
+
+                    &::before {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        flex-shrink: 0;
+                        margin-top: 6px;
+                        background-image: url('../icons/Ellipse.svg');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                    }
+                }
+
+            }
+
+            .important-text {
+                padding: 16px;
+                border: var(--border-gray_light);
+                border-radius: 16px;
+                background: var(--gray_white);
+            }
+        }
+    }
+
+    // Слайдер
+    &__swiper {
+        margin-bottom: 40px;
+
+        @include tablet {
+            width: 50%;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 12px;
+            height: 200px;
+        }
+
+        @include mobile {
+            width: 100%;
+            display: block;
+            height: max-content;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__swiper-base {
+        margin-bottom: 16px;
+        border-radius: 24px;
+        background: var(--white);
+        overflow: hidden;
+
+        .swiper-slide {
+            height: auto;
+
+            @include tablet {
+                height: 100%;
+            }
+        }
+
+        @include tablet {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 0;
+        }
+
+        @include mobile {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__item {
+        border: var(--border-gray_light);
+        border-radius: 24px;
+        overflow: hidden;
+        height: 33.33vh;
+        cursor: pointer;
+
+        @include tablet {
+            height: 100%;
+            aspect-ratio: auto;
+        }
+
+        @include mobile {
+            height: 200px;
+        }
+    }
+
+    &__swiper-bullet {
+        box-sizing: border-box;
+    }
+
+    &__item-bullet {
+        border: var(--border-gray_light);
+        overflow: hidden;
+        border-radius: 12px;
+        height: 60px;
+        width: 100%;
+        cursor: pointer;
+
+        @include tablet {
+            height: 44px;
+        }
+
+        @include mobile {
+            height: 48px;
+        }
+    }
+
+    // Пагинация (на подобном слайдере ее нет, удалила)
+    // &__pagination {
+    //     margin-top: 12px;
+    //     padding: 0 20px;
+
+    //     .swiper-pagination-bullet {
+    //         border-radius: 4px;
+    //         width: 24px;
+    //         height: 4px;
+    //         background-color: var(--white);
+    //         opacity: 1;
+    //         transition: background-color 0.2s;
+    //     }
+
+    //     .swiper-pagination-bullet:nth-child(n + 4) {
+    //         display: none;
+    //     }
+
+    //     .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    //         background-color: var(--blue_black);
+    //     }
+    //       /* Скрыть буллеты, которые не являются активными или ближайшими соседями */
+    //     .swiper-pagination-bullet {
+    //         opacity: 0 !important;
+    //         transition: opacity 0.4s;
+    //     }
+
+    //     /* Показать активный буллет */
+    //     .swiper-pagination-bullet-active {
+    //         opacity: 1 !important;
+    //     }
+
+    //     /* Показать ближайшие соседние буллеты (активный-1, активный+1) */
+    //     .swiper-pagination-bullet-active-prev,
+    //     .swiper-pagination-bullet-active-next {
+    //         opacity: 1 !important;
+    //     }
+    // }
+
+    // Оставить заявку
+
+    &__cta {
+        @include tablet {
+            width: 50%;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__cta-content {
+        position: relative;
+        display: grid;
+        border-radius: 32px;
+        overflow: hidden;
+        padding: 32px;
+        background: var(--gray_blue);
+
+        @include tablet {
+            padding: 25px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 140px;
+            height: 100%;
+            background: url(../images/modal/modal-cta.svg) no-repeat right;
+            background-size: contain;
+
+            z-index: 0;
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__cta-title {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 1.2;
+        color: var(--blue_dark);
+        margin-bottom: 12px;
+
+        @include tablet {
+            font-size: 24px;
+        }
+    }
+
+    &__cta-desc {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 24px;
+        max-width: 285px;
+        width: 100%;
+
+        @include tablet {
+            font-size: 16px;
+            margin-bottom: 16px;
+            max-width: 100%;
+        }
+    }
+
+    &__cta-btn {
+        max-width: max-content;
+
+        @include tablet {
+            max-width: 100%;
+        }
+    }
+
+    &__cta-btn-head {
+        max-width: max-content;
+    }
+
+    &__cta-title,
+    &__cta-desc,
+    &__cta-btn {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// Анимации модального окна
+@keyframes mmfadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mmfadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes mmslideIn {
+    from {
+        transform: translateY(15%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mmslideOut {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10%);
+    }
+}
+
+.micromodal-slide {
+    display: none;
+}
+
+.micromodal-slide.is-open {
+    display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+    animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+// .micromodal-slide[aria-hidden="false"] .modal__container {
+//     animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+// }
+
+// .micromodal-slide[aria-hidden="true"] .modal__overlay {
+//     animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+// }
+
+// .micromodal-slide[aria-hidden="true"] .modal__container {
+//     animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+// }
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+    // will-change: transform;
+}
+
+@keyframes mmslideIn {
+    from {
+        transform: perspective(1000px) rotateX(-10deg) translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: perspective(1000px) rotateX(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes mmslideOut {
+    from {
+        transform: perspective(1000px) rotateX(0) translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        /* Окно уходит чуть ниже и наклоняется назад */
+        transform: perspective(1000px) rotateX(-15deg) translateY(30px);
+        opacity: 0;
+    }
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+    /* cubic-bezier(0.16, 1, 0.3, 1) — плавный "дорогой" вылет */
+    animation: mmslideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+    /* закрытие чуть быстрее, чем открытие */
+    animation: mmslideOut 0.3s ease-in both;
+}
+
+/* Оверлей (фон) тоже должен исчезать плавно */
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+    animation: mmfadeOut 0.3s ease-in both;
+}
+
+// Окна ответов
+.form-section__success-message,
+.form-section__error-message {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-section__success-icon,
+.form-section__error-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+
+
+.form-section__success-title,
+.form-section__error-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 24px;
+
+}
+
+/*---------МОДАЛКА(END)--------*/

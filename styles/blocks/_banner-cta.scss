@@ -1,0 +1,128 @@
+@use "../helpers"as *;
+
+/*---------БАННЕР (START)--------*/
+
+.banner-cta {
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 20px;
+    }
+
+    &__image {
+        grid-column: span 4;
+        border-radius: 32px;
+        overflow: hidden;
+        position: relative;
+        height: auto;
+        min-height: 100%;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        position: relative;
+        display: grid;
+        border-radius: 32px;
+        overflow: hidden;
+        grid-column: span 8;
+        padding: 32px 48px;
+        background: linear-gradient(136deg, #0d3981 0%, #008c96 100%);
+
+        @include tablet {
+            padding: 24px;
+            grid-column: span 12;
+        }
+
+        @include mobile {
+            padding: 32px 24px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../images/cta/dnk.webp) no-repeat right;
+            background-size: contain;
+            opacity: 0.8;
+            z-index: 0;
+
+            @include tablet {
+                background: url(../images/cta/dnk-t.webp) no-repeat top right;
+            }
+
+            @include mobile {
+                background: url(../images/cta/dnk-m.webp) no-repeat top right;
+            }
+        }
+    }
+
+    &__title,
+    &-cta__desc,
+    &__actions {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 1.3;
+        color: var(--white);
+        margin-bottom: 12px;
+
+        @include tablet {
+            line-height: 1.5;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__desc {
+        color: var(--white);
+        margin-bottom: 24px;
+        width: 100%;
+        max-width: 41.66vw;
+        line-height: 1.3;
+
+        @include tablet {
+            max-width: 88%;
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        @include mobile {
+            max-width: 95%;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        column-gap: 10px;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+        }
+    }
+}
+
+/*---------БАННЕР (END)--------*/

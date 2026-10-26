@@ -1,0 +1,121 @@
+@use "helpers"as *;
+
+// *{
+//     outline: 4px solid red !important;
+// }
+body,
+html {
+    overflow-x: hidden !important;
+}
+
+html {
+    scroll-behavior: initial;
+}
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed; // Блокировка для iOS
+    width: 100%;
+    height: 100dvh; // Учет высоты мобильного браузера
+}
+
+body {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-base);
+    color: var(--color-primary);
+    background-color: var(--white);
+    font-weight: 400;
+
+    @include mobile {
+        font-size: 16px;
+    }
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    color: var(--color-primary);
+    font-family: var(--font-family-base);
+    line-height: 0.9;
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+    font-size: rem(48);
+    // @include fluid-text(48, 24);
+    font-weight: 500;
+    line-height: 1.2;
+
+    @include tablet {
+
+        font-size: 32px;
+        line-height: 1.1;
+    }
+
+    @include mobile {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+}
+
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+// button,
+// button:active,
+// button:focus {
+//     border: none;
+// }
+
+a {
+    color: inherit;
+
+    // @include hover {
+    //     color: var(--color-blue);
+    // }
+
+    // отключить подчеркивание ссылок, у которых есть класс
+    &[class] {
+        text-decoration: none;
+    }
+}
+
+.section {
+    margin-bottom: 160px;
+
+    @include laptop-s {
+        margin-bottom: 80px;
+    }
+}
+
+// при фокусе на элементе, который доступен с клавиатуры, добавить аутлайн
+:focus-visible {
+    outline: rem(2) dashed var(--grad-end);
+    outline-offset: rem(2);
+    transition-duration: 0s !important;
+}
+
+.highlight {
+    color: var(--blue_dark);
+}

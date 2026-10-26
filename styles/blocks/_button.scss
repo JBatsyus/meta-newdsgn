@@ -1,0 +1,149 @@
+@use "../helpers"as *;
+
+/*--------- КНОПКИ (START)--------*/
+.button {
+    display: inline-flex;
+    justify-content: center;
+    min-width: rem(116);
+    padding: rem(16) rem(32);
+    font-size: rem(16);
+    white-space: nowrap;
+
+    border-radius: rem(18);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+
+
+    &--primary {
+        color: var(--white);
+        background-color: var(--color-secondary);
+
+        @include hover {
+            background-color: var(--blue_hover);
+        }
+
+        &:active {
+            background: var(--blue_press);
+        }
+    }
+
+    &--secondary {
+
+        font-weight: 600;
+        color: var(--blue_black);
+        background-color: var(--white);
+
+        @include hover {
+            color: var(--blue_hover);
+        }
+
+        &:active {
+            color: var(--blue_press);
+        }
+    }
+
+    &--inverted {
+        background-color: transparent;
+        color: var(--white);
+        border: 1px solid var(--white);
+
+        @include hover {
+            background-color: var(--white);
+            color: var(--blue_hover);
+            border: 1px solid transparent;
+        }
+
+        &:active {
+            color: var(--blue_press);
+        }
+    }
+
+    &--accent {
+        border: 1px solid var(--blue_dark);
+        color: var(--blue_dark);
+        background-color: transparent;
+
+        @include hover {
+
+            color: var(--blue_hover);
+            border: 1px solid var(--blue_hover);
+        }
+
+        &:active {
+            border: 1px solid var(--blue_press);
+            color: var(--blue_press);
+        }
+
+    }
+
+}
+
+
+.btn-text {
+
+    font-weight: 600;
+    font-size: 16px;
+
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    text-decoration: underline !important;
+    text-align: center;
+    color: var(--blue_black);
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    &:hover {
+
+        color: var(--blue_hover);
+    }
+
+    &:active {
+        color: var(--blue_press);
+    }
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 99;
+
+    @include tablet {
+        right: 40px;
+    }
+
+    @include mobile {
+        right: 16px;
+    }
+}
+
+.scroll-to-top__icon {
+    color: var(--white);
+}
+
+.scroll-to-top:active {
+    transform: translateY(0);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/*--------- КНОПКИ (END)--------*/

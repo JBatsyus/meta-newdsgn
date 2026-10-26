@@ -1,0 +1,27 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+
+
+@use 'blocks/icon';
+@use 'blocks/social-dropdown';
+@use 'blocks/button';
+@use 'blocks/header';
+@use 'blocks/menu-mob';
+@use 'blocks/hero';
+@use 'blocks/special-offers';
+@use 'blocks/banner-cta';
+@use 'blocks/doctors';
+@use 'blocks/banner_documents';
+@use 'blocks/faq';
+@use 'blocks/services';
+@use 'blocks/about-clinic';
+@use 'blocks/before-after';
+@use 'blocks/form';
+@use 'blocks/micromodal';
+@use 'blocks/footer';
+
+

@@ -1,0 +1,65 @@
+@use "../helpers"as *;
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+
+    &::before {
+        --size: 24px;
+
+        @include square(var(--size));
+
+        content: '';
+        flex-shrink: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+    &--university {
+        align-items: end;
+
+        &::before {
+            background-image: url('../icons/metro.svg');
+        }
+    }
+
+    &--location {
+        align-items: end;
+
+        &::before {
+            background-image: url('../icons/location.svg');
+        }
+    }
+
+    &--eye {
+        &::before {
+            background-image: url('../icons/eye.svg');
+        }
+    }
+
+    &--heart {
+        &::before {
+            --size: 20px;
+            background-image: url('../icons/heart.svg');
+        }
+    }
+
+    &--star {
+        &::before {
+            --size: 16px;
+            background-image: url('../icons/star.svg');
+        }
+    }
+
+    &--doc-star {
+        &::before {
+            --size: 16px;
+            background-image: url('../icons/doc-star.svg');
+        }
+    }
+
+
+}

@@ -1,0 +1,64 @@
+@use 'helpers'as *;
+
+:root {
+    --blue_black: #253164;
+    --blue_dark: #3272DC;
+    --blue_gray: #A7B7D2;
+    --gray: #999999;
+    --gray_white: #F4F4F4;
+    --gray_light: #EAEAEA;
+    --white: #FFFFFF;
+    --blue_hover: #4686F0;
+    --green: #10D476;
+
+    --gray_blue: #EDF1FD;
+    --gray_1: #D9D9D9;
+    --gray_blue_dark: #4F5E77;
+    --gray_blue_white: #F6F7FD;
+    --gray_2: #F9F9F9;
+    --blue_press: #2868D2;
+    --red: #FB3116;
+
+    /* --- Градиент  --- */
+    --grad-start: #0D3981;
+    --grad-end: #008C96;
+
+    /* --- Дополнительные удобные переменные (по желанию) --- */
+    --color-primary: var(--blue_black);
+    --color-secondary: var(--blue_dark);
+    --color-accent: var(--green);
+    --color-error: var(--red);
+    --color-bg: var(--white);
+    --color-text: var(--blue_black);
+    --color-border: var(--gray_light);
+
+
+    --border-gray_light: 1px solid var(--gray_light);
+
+    --font-family-base: 'Manrope', sans-serif;
+
+    // ширина контейнера
+    --container-width: #{rem(1840)};
+    // внутренние горизонтальные оступы - смотреть на мобильной версии
+    --container-padding-x: #{rem(16)};
+
+    --transition-duration: 0.4s;
+
+    --100vw: calc(100vw - var(--scrollbar-width));
+    --header-height: 122px;
+
+
+
+    // контейнер на лэптопе
+    // @include laptop {
+    //     --container-width: #{rem(1280)};
+    // }
+
+    @include tablet {
+        --container-padding-x: #{rem(40)};
+    }
+
+    @include mobile {
+        --container-padding-x: #{rem(16)};
+    }
+}

@@ -1,0 +1,294 @@
+@use "../helpers"as *;
+/*---------- SPECIAL OFFERS (START)---------------------*/
+
+.special-offers {
+    .swiper {
+        @include tablet {
+            overflow: visible;
+            padding-bottom: 40px;
+        }
+    }
+
+    &__head {
+        margin-bottom: 40px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+            margin-bottom: 32px;
+        }
+
+        @include mobile {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__swiper {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        .swiper-wrapper {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .swiper-slide {
+            height: auto;
+            display: flex;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: var(--white);
+        border: var(--border-gray_light);
+        border-radius: 32px;
+        overflow: hidden;
+
+        @include tablet {
+            border-radius: 24px;
+        }
+    }
+
+    &__image-block {
+        position: relative;
+        width: 100%;
+        border-radius: 0 0 32px 32px;
+        height: 220px;
+        overflow: hidden;
+
+        @include tablet {
+            border-radius: 0 0 24px 24px;
+            height: 160px;
+        }
+
+        @include mobile {
+            height: 220px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__tag {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        background-color: var(--white);
+        border: var(--border-gray_light);
+        border-radius: 8px;
+        padding: 6px 12px;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.1;
+        letter-spacing: 0.01em;
+        text-align: center;
+        z-index: 10;
+
+        @include tablet {
+            top: 20px;
+            left: 20px;
+            border-radius: 16px;
+            padding: 8px 12px;
+        }
+    }
+
+    &__content {
+        padding: 20px 24px 24px 24px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include tablet {
+            padding: 16px 16px 20px 16px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+        color: var(--color-secondary);
+        margin-bottom: 20px;
+
+        @include tablet {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__benefits {
+        list-style: none;
+        margin: 0 0 24px 0;
+        padding: 0;
+        display: grid;
+        row-gap: 8px;
+
+        li {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.6;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+
+            &::before {
+                content: "";
+                width: 12px;
+                height: 12px;
+                flex-shrink: 0;
+                margin-top: 6px;
+                background-image: url('../icons/Ellipse.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+    }
+
+
+    &__bottom {
+        display: grid;
+        row-gap: 24px;
+        margin-top: auto;
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    &__price-current {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.1;
+        color: var(--blue_black);
+        text-transform: uppercase;
+    }
+
+    &__price-old {
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+        color: var(--gray);
+        text-decoration: line-through;
+    }
+
+    &__price-discount {
+        font-size: 14px;
+        line-height: 1.4;
+        letter-spacing: 0.01em;
+        color: var(--blue_black);
+        border: 1px solid var(--blue_dark);
+        border-radius: 8px;
+        padding: 2px 6px;
+    }
+
+    // Навигация
+    &__controls {
+        position: absolute;
+        top: 50%;
+
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 24px;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    &__nav {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: var(--white);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
+
+        svg {
+            display: block;
+            color: var(--gray_blue_dark);
+            transition: color 0.2s ease;
+        }
+
+        &:hover svg,
+        &:focus-visible svg {
+            color: var(--blue_hover);
+        }
+    }
+
+    // Пагинация
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+        padding: 0 20px;
+
+
+        .swiper-pagination-bullet {
+            border-radius: 4px;
+            width: 24px;
+            height: 4px;
+            background-color: var(--blue_gray);
+            transition: background-color 0.2s;
+        }
+
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background-color: var(--color-primary);
+        }
+
+        .swiper-pagination-bullets-dynamic {
+            overflow: hidden;
+            font-size: 0;
+        }
+
+        /* Скрыть буллеты, которые не являются активными или ближайшими соседями */
+        .swiper-pagination-bullet {
+            opacity: 0 !important;
+            transition: opacity 0.4s;
+        }
+
+        /* Показать активный буллет */
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+        }
+
+        /* Показать ближайшие соседние буллеты (активный-1, активный+1) */
+        .swiper-pagination-bullet-active-prev,
+        .swiper-pagination-bullet-active-next {
+            opacity: 1 !important;
+        }
+
+    }
+}
+
+
+// .swiper-pagination-bullet{
+// transform : scale(1) !important;
+// }
+// .swiper-pagination-bullet:not(.swiper-pagination-bullet-active-main){
+//   opacity: 0;
+// }
+
+/*---------- SPECIAL OFFERS (END)---------------------*/
