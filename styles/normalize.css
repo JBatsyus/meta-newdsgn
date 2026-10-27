@@ -243,8 +243,8 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Golos Text", system-ui, sans-serif;
-    color: #1c1917;
-    background-color: #fafaf9;
+    color: #1c2b33;
+    background-color: #ffffff;
     font-weight: 400;
 }
 
@@ -284,7 +284,7 @@ a[class] {
 }
 
 :focus-visible {
-    outline: 0.125rem dashed #0f766e;
+    outline: 0.125rem dashed #0064e0;
     outline-offset: 0.125rem;
     transition-duration: 0s !important;
 }

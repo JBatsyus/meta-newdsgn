@@ -367,61 +367,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (btnText && modalSubmitBtn) modalSubmitBtn.textContent = btnText;
             }
             initChoices(modal);
-
-            // #region agent log
-            requestAnimationFrame(() => {
-                const overlayEl = modal.querySelector(".modal__overlay");
-                const container = modal.querySelector(".modal__container");
-                const submit = modal.querySelector(".modal__submit");
-                if (!overlayEl || !container) return;
-                const oc = getComputedStyle(overlayEl);
-                const cc = getComputedStyle(container);
-                const vv = window.visualViewport;
-                const submitRect = submit ? submit.getBoundingClientRect() : null;
-                const viewportH = vv ? vv.height : window.innerHeight;
-                const before = overlayEl.scrollTop;
-                overlayEl.scrollTop = 9999;
-                const scrolled = overlayEl.scrollTop;
-                overlayEl.scrollTop = before;
-                const data = {
-                    innerW: window.innerWidth,
-                    innerH: window.innerHeight,
-                    vvH: vv ? vv.height : null,
-                    htmlOverflow: getComputedStyle(document.documentElement).overflow,
-                    bodyOverflow: getComputedStyle(document.body).overflow,
-                    htmlClass: document.documentElement.className,
-                    overlayOverflowY: oc.overflowY,
-                    overlayClientH: overlayEl.clientHeight,
-                    overlayScrollH: overlayEl.scrollHeight,
-                    overlayCanScroll: overlayEl.scrollHeight > overlayEl.clientHeight + 1,
-                    overlayScrollWorked: scrolled > 0,
-                    containerOverflow: cc.overflow,
-                    containerMinH: cc.minHeight,
-                    containerMaxH: cc.maxHeight,
-                    containerHeight: cc.height,
-                    containerTransform: cc.transform,
-                    submitBottom: submitRect ? submitRect.bottom : null,
-                    submitCutOff: submitRect ? submitRect.bottom > viewportH + 2 : null,
-                    hasLenisPrevent: overlayEl.hasAttribute("data-lenis-prevent"),
-                };
-                fetch("http://127.0.0.1:7466/ingest/61b997e9-f9d0-4ad4-9e50-896ebbf3c13b", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-Debug-Session-Id": "f0c96a",
-                    },
-                    body: JSON.stringify({
-                        sessionId: "f0c96a",
-                        runId: "scroll-fix",
-                        hypothesisId: "H12-lenis-clip",
-                        location: "main.js:MicroModal.onShow",
-                        message: "modal scroll metrics after overlay-scroll fix",
-                        data,
-                        timestamp: Date.now(),
-                    }),
-                }).catch(() => {});
-            });
-            // #endregion
         },
         onClose: (modal) => {
             document.documentElement.classList.remove("modal-scroll-lock");
