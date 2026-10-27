@@ -78,6 +78,10 @@
                         Заказать звонок
                     </button>
 
+                    <button type="button" class="header__call" data-micromodal-trigger="modal-1" aria-label="Заказать звонок">
+                        <i data-lucide="phone" aria-hidden="true"></i>
+                    </button>
+
                     <a href="tel:+79999999999" class="header__phone btn">
                         +7 (999) 999-99-99
                     </a>
@@ -778,17 +782,15 @@
         <div class="container">
             <div class="footer__body" data-reveal>
                 <div class="footer__top">
-                    <div class="footer__brand">
-                        <p class="footer__logo">Таргетированная реклама в <span class="footer__logo-accent">Meta Ads</span></p>
-                        <nav aria-label="Навигация в подвале">
-                            <ul class="footer__menu-list">
-                                <li class="footer__menu-item"><a href="#for-whom" class="footer__menu-link">Для кого</a></li>
-                                <li class="footer__menu-item"><a href="#how-we-work" class="footer__menu-link">Как мы работаем</a></li>
-                                <li class="footer__menu-item"><a href="#reporting" class="footer__menu-link">Отчетность</a></li>
-                                <li class="footer__menu-item"><a href="#cases" class="footer__menu-link">Кейсы</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <p class="footer__logo">Таргетированная реклама в <span class="footer__logo-accent">Meta Ads</span></p>
+                    <nav class="footer__nav" aria-label="Навигация в подвале">
+                        <ul class="footer__menu-list">
+                            <li class="footer__menu-item"><a href="#for-whom" class="footer__menu-link">Для кого</a></li>
+                            <li class="footer__menu-item"><a href="#how-we-work" class="footer__menu-link">Как мы работаем</a></li>
+                            <li class="footer__menu-item"><a href="#reporting" class="footer__menu-link">Отчетность</a></li>
+                            <li class="footer__menu-item"><a href="#cases" class="footer__menu-link">Кейсы</a></li>
+                        </ul>
+                    </nav>
                     <div class="footer__actions">
                         <ul class="footer__socials" aria-label="Социальные сети">
                             <li>
@@ -817,7 +819,7 @@
 
 
     <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close data-lenis-prevent>
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                 <div class="modal__intro">
                     <div class="modal__header">
