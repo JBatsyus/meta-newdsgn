@@ -23,7 +23,7 @@
     --grad-start: #0D3981;
     --grad-end: #008C96;
 
-    /* --- Дополнительные удобные переменные (по желанию) --- */
+  
     --color-primary: var(--blue_black);
     --color-secondary: var(--blue_dark);
     --color-accent: var(--green);
@@ -39,7 +39,7 @@
 
     // ширина контейнера
     --container-width: #{rem(1840)};
-    // внутренние горизонтальные оступы - смотреть на мобильной версии
+   
     --container-padding-x: #{rem(16)};
 
     --transition-duration: 0.4s;
